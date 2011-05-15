@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>CSS3 Background Utilities Demo</title>
+
+	<!-- jQuery (required) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+
+	<link href="css/demo.css" rel="stylesheet">
+	<script src="js/jquery.css3background.js"></script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				if ($(this).text() === '+') {
+					if ($(this).next().is('input')) {
+						$('#sample').prependBackground( $(this).next().val() );
+					} else {
+						$('#sample').appendBackground( $(this).prev().val() );
+					}
+				} else {
+					$('#sample').removeBackground( $(this).next().val() );
+				}
+				
+			});
+			// add the wall
+			$('button:first').trigger('click');
+		});
+	</script>
+
+</head>
+
+<body>
+	<h1><a href="https://github.com/Mottie/css3-background-utilities">jQuery CSS3 Background Utilities</a></h1>
+	<h3>This plugin allows you to append, prepend and remove multiple background images</h3>
+
+	<div id="selectors">
+		<button title="prepend image">+</button><input type="text" value="url(images/wall.jpg) 50% 50% no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="wall.jpg">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/hole.gif) 350px 310px no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="hole.gif">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/ivy.png) top right no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="ivy.png">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/sign.gif) 630px 340px no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="sign.gif">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/smiley.png) 55% 10% no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="smiley.png">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/window.gif) 50px 30px no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="window.gif">
+		<br>
+		<button title="prepend image">+</button><input type="text" value="url(images/graffiti.png) 5% 80% no-repeat"><button title="append image">+</button>&nbsp;
+		<button title="remove image">-</button><input type="text" value="graffiti.png">
+	</div>
+	<br>
+	<div id="sample"></div>
+
+</body>
+
+</html>
